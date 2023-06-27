@@ -1,0 +1,107 @@
+nav {
+    width: 100%;
+    margin: 0;
+    padding: 1px 0;
+    background-color: rgb(73, 119, 32); /* Ein dunkles Grau */
+    
+  }
+
+body{
+    padding: 0%;
+}
+
+nav ul {
+    display: flex;
+    justify-content:space-around;
+    list-style-type: none;
+  }
+
+.navbar-link{
+    text-decoration: none;
+    color: burlywood;
+}
+
+.navbar-link:hover{
+    text-decoration: none;
+    color:rgb(234, 98, 0) ;
+}
+
+.bilddiv img{
+    width: 100%;
+}
+
+.bilddiv p{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    color:rgb(239, 165, 74);  
+    z-index: 1;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    font-size: 200%;
+  }
+
+  .kartenset{
+    width: 100%;
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    border: black;
+    border-width: 5px;
+    border-radius: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .karte{
+    display: flex;
+    border: black;
+    border-width: 5px;
+    border-radius: 2rem;
+    background-color: rgb(210, 244, 180);
+    margin: 20px;
+    height: 200px;
+    width: 300px;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+ }
+
+.misp{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h6{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+table{
+    text-align: center;
+    margin-top: 40px;
+}
+
+th img{
+    width: 150px;
+    height: 120px;
+}
+
+.karttext{
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footerdiv{
+    background-color: rgb(73, 119, 32);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+}

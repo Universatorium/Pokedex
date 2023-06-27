@@ -1,0 +1,37 @@
+//- layout.pug
+
+block boiler
+    include boiler.pug
+
+body
+    block navbar
+        include navbar.pug
+
+    block bild
+        include images.pug
+
+    block karten
+        each pokemon, index in pokemons
+            //- Verwende die index-Variable, um eine eindeutige ID zu generieren
+            div(id=`pokemon-${index}`)
+                include pokemons.pug
+
+    block footer
+        include footer.pug
+
+
+
+
+
+
+
+
+    //- body
+    //-     block navbar
+    //-         include ./navbar.pug
+    //-     block bild
+    //-         include ./images.pug
+    //-     block karten
+    //-         include ./pokemons.pug
+    //-     block footer
+    //-         include ./footer.pug
