@@ -1,16 +1,25 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+const fs = require('fs');
+const pokemons = require('./Pokemon.json')
+app.use(express.static('public'));
 
-// Setze den View-Engine auf Pug
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'public/views'));
 
-// Definiere eine Route und rendere die Pug-Datei
 app.get('/', (req, res) => {
-  const jsonData = require('./pokemon.json');
-  res.render('index', { data: jsonData });
+  const data = JSON.parse(fs.readFileSync('Pokemon.json', 'utf8'));
+  res.render('index', { data });
 });
 
+app.get('/details/:name', (req, res) => {
+  const name = req.params.name;
+  const pokemon = pokemons.find(pokemon => pokemon.Name === name);
+  res.render('details', { pokemon });
+})
+
 // Starte den Server
-app.listen(5500, () => {
-  console.log('Server started on port 5500');
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
 });

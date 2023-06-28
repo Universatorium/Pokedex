@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .details {
+        background-color: blue;
+        padding: 20px;
+        color: white;
+      }
+  body
+    .details
+      h1 Pokémon Details
+      p Name: pokemon.Name
+      p Typ: pokemon.Typ
+      p Beschreibung: pokemon.Beschreibung
+      p Größe: pokemon.Größe
+
+
+    //- script.
+    //-   // Fetch the Pokémon data based on the index parameter in the URL
+    //-   var urlParams = new URLSearchParams(window.location.search);
+    //-   var index = urlParams.get('index');
+
+    //-   fetch('pokemon.json')
+    //-     .then(response => response.json())
+    //-     .then(data => {
+    //-       var pokemon = data.pokemons[index];
+    //-       document.querySelector('h1').innerText = pokemons.Name;
+    //-       document.querySelector('.details p:nth-child(2)').innerText = 'Typ: ' + pokemons.Typ;
+    //-       document.querySelector('.details p:nth-child(3)').innerText = 'Beschreibung: ' + pokemons.Beschreibung;
+    //-       document.querySelector('.details p:nth-child(4)').innerText = 'Größe: ' + pokemons.Größe;
+    //-     })
+    //-     .catch(error => {
+    //-       console.log('Fehler beim Laden der JSON-Datei:', error);
+    //-     });

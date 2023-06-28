@@ -11,11 +11,8 @@ body
         include images.pug
 
     block karten
-        each pokemon, index in pokemons
-            //- Verwende die index-Variable, um eine eindeutige ID zu generieren
-            div(id=`pokemon-${index}`)
-                include pokemons.pug
-
+        include pokmons.pug 
+                    
     block footer
         include footer.pug
 
