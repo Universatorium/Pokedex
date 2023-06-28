@@ -9,6 +9,11 @@ nav {
 body{
     padding: 0%;
 }
+
+.details{
+    flex-direction: column;
+
+}
 h2{
     display: flex;
     justify-content: center;

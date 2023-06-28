@@ -1,40 +1,41 @@
-doctype html
-html
-  head
-    style.
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      .details {
-        background-color: blue;
-        padding: 20px;
-        color: white;
-      }
-  body
-    .details
-      h1 Pokémon Details
-      p Name: element.Name
-      p Typ: element.Typ
-      p Beschreibung: element.Beschreibung
-      p Größe: element.Größe
+extends layout 
 
+block karten
+  
+  style.
+    .details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top:100px;
+    }
 
-    //- script.
-    //-   // Fetch the Pokémon data based on the index parameter in the URL
-    //-   var urlParams = new URLSearchParams(window.location.search);
-    //-   var index = urlParams.get('index');
+    .details h1 {
+      margin-top: 10px;
+      font-size: 55px;
+    }
+    .details h2 {
+      margin-top: 10px;
+      font-size: 35px;
+    }
+    .details h3 {
+      margin-top: 10px;
+      font-size: 25px;
+    }
+  
+  
+  .details
 
-    //-   fetch('pokemon.json')
-    //-     .then(response => response.json())
-    //-     .then(data => {
-    //-       var pokemon = data.pokemons[index];
-    //-       document.querySelector('h1').innerText = pokemons.Name;
-    //-       document.querySelector('.details p:nth-child(2)').innerText = 'Typ: ' + pokemons.Typ;
-    //-       document.querySelector('.details p:nth-child(3)').innerText = 'Beschreibung: ' + pokemons.Beschreibung;
-    //-       document.querySelector('.details p:nth-child(4)').innerText = 'Größe: ' + pokemons.Größe;
-    //-     })
-    //-     .catch(error => {
-    //-       console.log('Fehler beim Laden der JSON-Datei:', error);
-    //-     });
+    h1  #{pokemon.Name}
+      table
+          img.bilddiv(src= "/images/" + pokemon.Bild)
+
+          h3 Typ: #{pokemon.Typ}
+  
+        
+          th 
+            h2 Beschreibung: #{pokemon.Beschreibung}
+          tr 
+            p Größe: #{pokemon.Größe}
+      a(href='/') zurück

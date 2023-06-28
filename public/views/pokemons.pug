@@ -5,12 +5,15 @@ block karten
         each element in data
             
             div.karte 
+                
                 h1= element.ID
-                    h3.karttext= element.Name
+                    
+                    h1.karttext
+                        a(href='/details/'+ element.Name) #{element.Name}
+                        
                     table
                         tr      
                             th 
                                 img(src= "/includes/images/" + element.Bild, alt=element.Bild)
-                                a(href='/details/'+ element.Name)
-                                    h1= element.Name
-                        th= element.Typ
+                                    
+                            th= element.Typ
