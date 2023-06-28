@@ -8,8 +8,8 @@ with open('Pokemon.json', 'r', encoding='utf-8') as file:
 i=1
 for i, entry in enumerate(data, start=1):
     entry['ID'] = i
-    # bildname = f"{i:03}.png"
-    # entry['Bild'] = bildname
+    bildname = f"{i:03}.png"
+    entry['Bild'] = bildname
 
 # Aktualisierte Daten in die JSON-Datei schreiben
 with open('Pokemon.json', 'w', encoding='utf-8') as file:
