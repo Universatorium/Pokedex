@@ -54,6 +54,7 @@ nav ul {
 }
 
 .kartenset{
+    align-content: center;
     width: 100%;
     margin: 50px;
     display: flex;
@@ -62,7 +63,8 @@ nav ul {
     border-width: 5px;
     border-radius: 1rem;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-right:50px;
   }
 
   .karte{
@@ -71,7 +73,7 @@ nav ul {
     border-width: 5px;
     border-radius: 1rem;
     background-color: rgb(210, 244, 180);
-    margin: 30px;
+    margin: 20px;
     height: 200px;
     width: 300px;
     justify-content: center;
@@ -103,6 +105,27 @@ th img{
     margin-bottom: 10px;
 }
 
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top:100px;
+}
+
+.details h1 {
+margin-top: 10px;
+font-size: 55px;
+}
+.details h2 {
+    margin-top: 10px;
+    font-size: 35px;
+}
+.details h3 {
+    margin-top: 10px;
+    font-size: 25px;
+}
 .footerdiv{
     background-color: rgb(73, 119, 32);
     position:fixed;
