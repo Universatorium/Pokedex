@@ -1,0 +1,24 @@
+# Verwende das gewünschte Basisimage, das deine Frontend-Abhängigkeiten enthält
+FROM node:latest
+
+# Setze das Arbeitsverzeichnis im Container
+WORKDIR /app
+
+# Kopiere die package.json und package-lock.json in den Container
+COPY package*.json ./
+
+# Installiere die Abhängigkeiten
+RUN npm install
+
+# Kopiere den restlichen Frontend-Code in den Container
+COPY . .
+
+# Baue das Frontend
+# RUN npm run build
+
+# Exponiere den Port, auf dem das Frontend bereitgestellt wird
+EXPOSE 8080
+
+# Starte einen einfachen HTTP-Server, um das Frontend bereitzustellen
+CMD [ "npx", "http-server", "-p", "8080", "dist" ]
+# CMD ["npm", "start"]

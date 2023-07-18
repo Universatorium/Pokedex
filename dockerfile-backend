@@ -1,0 +1,21 @@
+# Verwende das gewünschte Basisimage, das deine Backend-Abhängigkeiten enthält
+FROM node:latest
+
+# Setze das Arbeitsverzeichnis im Container
+WORKDIR /app
+
+# Kopiere die package.json und package-lock.json in den Container
+COPY package*.json ./
+
+# Installiere die Abhängigkeiten
+RUN npm install
+
+# Kopiere den restlichen Backend-Code in den Container
+COPY . .
+
+# Exponiere den Port, auf dem das Backend lauscht
+EXPOSE 3000
+
+# Starte das Backend
+# CMD [ "npm", "start" ]
+RUN node server.js
