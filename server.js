@@ -9,7 +9,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'public/views'));
 
 // Verbindung zur MongoDB im Docker-Container herstellen
-const url = 'mongodb://database:27017'; // Verwende den Servicenamen "database" und den MongoDB-Standardport
+const url = 'mongodb://database:27017'; 
 
 // API-Endpunkt zum Abrufen der Daten
 app.get('/', (req, res) => {
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
       return;
     }
 
-    const db = client.db('database'); // Ersetze <Datenbankname> durch den Namen deiner Datenbank
+    const db = client.db('database'); 
     const collection = db.collection('pokemons');
 
     collection.find({}).toArray((err, data) => {
@@ -46,7 +46,7 @@ app.get('/details/:name', (req, res) => {
       return;
     }
 
-    const db = client.db('database'); // Ersetze <Datenbankname> durch den Namen deiner Datenbank
+    const db = client.db('database');
     const collection = db.collection('pokemons');
 
     collection.findOne({ Name: name }, (err, pokemon) => {
@@ -55,6 +55,7 @@ app.get('/details/:name', (req, res) => {
         res.status(500).json({ error: 'Fehler beim Abrufen des Pokemons aus der Datenbank' });
       } else {
         res.render('details', { pokemon });
+        console.log(pokemon);
       }
 
       client.close(); // Verbindung zur Datenbank schließen

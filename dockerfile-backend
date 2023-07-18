@@ -17,5 +17,5 @@ COPY . .
 EXPOSE 3000
 
 # Starte das Backend
-# CMD [ "npm", "start" ]
-RUN node server.js
+CMD [ "npm", "start" ]
+# RUN node server.js
