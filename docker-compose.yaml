@@ -13,11 +13,11 @@ services:
       context: .
       dockerfile: dockerfile-backend
     ports:
-      - 3000:3000
+      - 3001:3001
     depends_on:
       - database
-    # volumes:
-    #   - ./Pokemon.json:/app/Pokemon.json
+    volumes:
+      - ./Pokemon.json:/app/Pokemon.json
       # Weitere Konfigurationen für das Backend, wie Ports und Umgebungsvariablen, können hier hinzugefügt werden.
     mem_limit: 2g
     memswap_limit: 2g
