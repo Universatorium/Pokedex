@@ -20,5 +20,5 @@ COPY . .
 EXPOSE 8080
 
 # Starte einen einfachen HTTP-Server, um das Frontend bereitzustellen
-CMD [ "npx", "http-server", "-p", "8080", "dist" ]
+CMD [ "http-server", "-p", "8080", "dist" ]
 # CMD ["npm", "start"]
